@@ -1,0 +1,50 @@
+//ROCK PAPER SCISSORS
+//JAVA CODE:-
+import java.util.Random;
+import java.util.Scanner;
+
+public class RockPaperScissors {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] options = {"Rock", "Paper", "Scissors"};
+        Random random = new Random();
+
+        while (true) {
+            System.out.println("Choose Rock, Paper, or Scissors (or type Exit to quit): ");
+            String userChoice = scanner.nextLine();
+            if (userChoice.equalsIgnoreCase("Exit")) {
+                break;
+            }
+
+            String computerChoice = options[random.nextInt(options.length)];
+            System.out.println("Computer chose: " + computerChoice);
+
+            if (userChoice.equalsIgnoreCase(computerChoice)) {
+                System.out.println("It's a tie!");
+            } else if ((userChoice.equalsIgnoreCase("Rock") && computerChoice.equals("Scissors")) ||
+                       (userChoice.equalsIgnoreCase("Paper") && computerChoice.equals("Rock")) ||
+                       (userChoice.equalsIgnoreCase("Scissors") && computerChoice.equals("Paper"))) {
+                System.out.println("You win!");
+            } else {
+                System.out.println("You lose!");
+            }
+        }
+        scanner.close();
+    }
+}
+
+//OUTPUT:-
+"C:\Program Files\Java\jdk-21\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.2\lib\idea_rt.jar=52281:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.2\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath D:\java_intellij\simple\out\production\simple com.GAmes.RockPaperScissors
+Enter Rock, Paper, or Scissors (or Exit to quit): 
+Rock
+Computer chose: Paper
+You lose!
+Enter Rock, Paper, or Scissors (or Exit to quit): 
+Paper
+Computer chose: Paper
+It's a tie!
+Enter Rock, Paper, or Scissors (or Exit to quit): 
+Scissors
+Computer chose: Rock
+You lose!
+Enter Rock, Paper, or Scissors (or Exit to quit): 
